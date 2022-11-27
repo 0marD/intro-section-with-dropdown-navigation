@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FeatureItems } from './FeatureItems'
 import Button from './Button';
+import arrow from "../assets/icons/icon-arrow-down.svg"
 
 function DeskNav(props) {
 
@@ -24,12 +25,12 @@ function DeskNav(props) {
       <section className="navDesk-items">
         <div className="navDesk-items__item" onClick={deployFeatures}>
           <span>Feautures</span>
-          <img className={`${features ? "arrow--active" : ""}`} src="/src/assets/icons/icon-arrow-down.svg" alt="Arrow icon" />
+          <img className={`${features ? "arrow--active" : ""}`} src={arrow} alt="Arrow icon" />
         </div>
         <FeatureItems className={`features__items ${features ? "features__items--show" : ""}`} closeNav={props.closeNav} screen="Desk" />
         <div className="navDesk-items__item" onClick={deployCompany}>
           <span>Company</span>
-          <img className={`${company ? "arrow--active" : ""}`} src="/src/assets/icons/icon-arrow-down.svg" alt="Arrow icon" />
+          <img className={`${company ? "arrow--active" : ""}`} src={arrow} alt="Arrow icon" />
         </div>
         <div className={`companyItems ${company ? "companyItems--show" : ""}`}>
           <p>History</p>

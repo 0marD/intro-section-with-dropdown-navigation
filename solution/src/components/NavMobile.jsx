@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from './Button'
 import { FeatureItems } from './FeatureItems'
-
+import arrow from "../assets/icons/icon-arrow-down.svg"
 
 function NavMobile(props) {
 
@@ -25,12 +25,12 @@ function NavMobile(props) {
       <nav className="navMobile">
         <div className="navMobile__item" onClick={deployFeatures}>
           <span>Feautures</span>
-          <img className={`${features ? "arrow--active" : ""}`} src="/src/assets/icons/icon-arrow-down.svg" alt="Arrow icon" />
+          <img className={`${features ? "arrow--active" : ""}`} src={arrow} alt="Arrow icon" />
         </div>
         <FeatureItems className={`features__items ${features ? "features__items--show" : ""}`} closeNav={props.closeNav} screen="Mobile" />
         <div className="navMobile__item" onClick={deployCompany}>
           <span>Company</span>
-          <img className={`${company ? "arrow--active" : ""}`} src="/src/assets/icons/icon-arrow-down.svg" alt="Arrow icon" />
+          <img className={`${company ? "arrow--active" : ""}`} src={arrow} alt="Arrow icon" />
         </div>
         <div className={`companyItems ${company ? "companyItems--show" : ""}`}>
           <p>History</p>
