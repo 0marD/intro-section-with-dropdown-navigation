@@ -1,0 +1,99 @@
+@use "button" as b;
+
+.navDesk {
+  width: 100%;
+  display: none;
+  padding-left: 60px;
+
+  .arrow--active {
+    transition: transform 0.3s;
+    transform: rotate(180deg) translate(0, 0);
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+
+    &-btns {
+      display: flex;
+      gap: 0.5rem;
+
+      &__btn--fill {
+        @include b.button(hsl(0, 0%, 8%), 1px, hsl(0, 0%, 98%));
+        height: 3rem;
+        width: 7.5rem;
+      }
+
+      &__btn--noFill {
+        @include b.button(none, 1px, hsl(0, 0%, 98%));
+        color: hsl(0, 0%, 8%);
+        height: 3rem;
+        width: 7.5rem;
+
+        &:hover {
+          border: 1px solid hsl(0, 0%, 8%);
+          background-color: hsl(0, 0%, 98%);
+        }
+      }
+    }
+
+    &-items {
+      display: flex;
+      width: auto;
+      gap: 2.5rem;
+      transition: all 0.3s;
+      background-color: white;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: white;
+        color: (0, 0%, 41%);
+        &:hover {
+          color: hsl(0, 0%, 8%);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__item {
+      background-color: white;
+
+      &-line {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap: 0.9375rem;
+      }
+    }
+
+    .companyItems {
+      top: 5.5rem;
+      left: 18.75rem;
+      position: absolute;
+      z-index: 10;
+      height: 0;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      background-color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &--show {
+        margin: 0.75rem 0;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        padding: 1.5625rem;
+        border-radius: 0.75rem;
+        height: 7rem;
+        display: flex;
+      }
+    }
+  }
+}

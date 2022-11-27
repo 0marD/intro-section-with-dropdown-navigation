@@ -1,0 +1,26 @@
+@mixin button($bgColor, $borderThinck, $borderColor) {
+  background-color: $bgColor;
+  border: solid $borderThinck;
+  border-color: $borderColor;
+  color: $borderColor;
+  padding: 0.8rem;
+  transition: all 0.3s;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+
+  &:hover {
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: $borderColor;
+    border-color: $bgColor;
+    color: $bgColor;
+  }
+
+  &:active {
+    transform: translate(0, 2px);
+    transition: none;
+  }
+}

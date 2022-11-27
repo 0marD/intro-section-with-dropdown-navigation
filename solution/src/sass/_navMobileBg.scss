@@ -1,0 +1,136 @@
+@use "button" as b;
+
+.navMobileBg {
+  width: 0;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  right: 0;
+  overflow: hidden;
+  top: 0;
+
+  &--show {
+    transition: width 0.3s;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+  }
+}
+
+.navMobile {
+  width: 70%;
+  background-color: white;
+  height: 100%;
+  padding: 0 1.5625rem;
+  padding-top: 4.8125rem;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    width: 6.25rem;
+    z-index: 100;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-line {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .arrow--active {
+      transition: transform 0.3s;
+      transform: rotate(180deg) translate(0, 0);
+    }
+  }
+
+  &-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+
+    &__btn--noFill {
+      @include b.button(none, 1px, white);
+      width: 100%;
+      color: black;
+
+      &:hover {
+        border: black 1px solid;
+      }
+    }
+
+    &__btn--fill {
+      @include b.button(black, 1px, white);
+      width: 100%;
+    }
+  }
+}
+
+.features__items {
+  transition: height 0.3s;
+  height: 0;
+  overflow: hidden;
+  background-color: white;
+
+  @media screen and (min-width: 1024px) {
+    top: 6.125rem;
+    left: 7.5rem;
+    position: absolute;
+    z-index: 10;
+
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--show {
+    height: 8.125rem;
+    transition: height 0.3s;
+    background-color: white;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9375rem;
+      justify-content: right;
+      border-radius: 0.75rem;
+      height: 10rem;
+      padding: 1.5625rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+  }
+}
+
+.companyItems {
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.5rem;
+  transition: height 0.3s;
+  background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--show {
+    margin: 0.75rem 0;
+    height: 4.375rem;
+    transition: height 0.3s;
+  }
+}

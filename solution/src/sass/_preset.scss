@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 16px;
+
+  @media screen and (min-width: 750px) {
+    font-size: 25px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+img,
+svg {
+  display: block;
+  object-fit: contain;
+}
+
+a {
+  display: block;
+  width: max-content;
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  font-family: inherit;
+  color: inherit;
+  background-color: unset;
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  color: hsl(0, 0%, 41%);
+}

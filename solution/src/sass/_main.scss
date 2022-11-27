@@ -1,0 +1,132 @@
+@use "button" as b;
+
+.main {
+  margin: auto;
+  margin-top: 0;
+
+  @media screen and(min-width:1024px) {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    padding-bottom: 8.125rem;
+  }
+
+  &-cover {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    &__desk {
+      display: none;
+    }
+
+    @media screen and(min-width:1024px) {
+      width: 40%;
+      padding-right: 3.4375rem;
+
+      &__desk {
+        display: block;
+      }
+
+      &__mobile {
+        display: none;
+      }
+    }
+  }
+
+  &Body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 3.125rem 1.25rem;
+    gap: 1.875rem;
+
+    @media screen and(min-width:1024px) {
+      width: 60%;
+      text-align: left;
+      gap: 3.4375rem;
+      padding-left: 10%;
+      padding-right: 5%;
+    }
+    @media screen and (min-width: 1440px) {
+      padding-left: 10.625rem;
+      padding-right: 9.375rem;
+    }
+    &__header {
+      font-weight: 700;
+      font-size: 2.1rem;
+      color: hsl(0, 0%, 8%);
+      @media screen and(min-width:1024px) {
+        font-size: 5rem;
+      }
+    }
+
+    &__content {
+      line-height: 1.4;
+
+      @media screen and(min-width:1024px) {
+        padding-right: 5%;
+        font-size: 1.4rem;
+      }
+      @media screen and(min-width:1440px) {
+        padding-right: 7rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    &Btns {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and(min-width:1024px) {
+        justify-content: left;
+      }
+
+      &__btn {
+        @include b.button(black, 1px, white);
+        width: 8.75rem;
+        height: 50px;
+        font-weight: 700;
+      }
+    }
+
+    &Patners {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: 1.25rem;
+
+      &__pantner {
+        height: 1rem;
+
+        @media screen and(min-width:1024px) {
+          width: 6.25rem;
+          height: auto;
+        }
+
+        &--lg {
+          height: 1.6875rem;
+
+          @media screen and(min-width:1024px) {
+            height: 2.3125rem;
+          }
+        }
+
+        &--mm {
+          height: 1.3rem;
+
+          @media screen and(min-width:1024px) {
+            height: 1.5625rem;
+          }
+        }
+      }
+    }
+  }
+}
